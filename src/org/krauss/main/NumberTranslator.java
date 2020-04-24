@@ -2,12 +2,14 @@ package org.krauss.main;
 
 import java.util.Iterator;
 import java.util.Stack;
-import org.krauss.obj.Triple;
+import org.krauss.obj.Triple_English;
+import org.krauss.obj.Triple_Portuguese;
+import org.krauss.obj.Triple_Spanish;
 
 public class NumberTranslator {
 
 	private String number;
-	private Stack<Triple> tripleStack = new Stack<>();
+	private Stack<Triple_Spanish> tripleStack = new Stack<>();
 	private int tripleIndex = 0;
 	
 	
@@ -43,20 +45,20 @@ public class NumberTranslator {
 
 			if (index < 0) {
 
-				tripleStack.push(new Triple(triple, tripleIndex));
+				tripleStack.push(new Triple_Spanish(triple, tripleIndex));
 				triple = new char[]{'0','0','0'};
 				index = 2;
 				tripleIndex++;
 
 			} else if (i == 0) {
 
-				tripleStack.push(new Triple(triple, tripleIndex));
+				tripleStack.push(new Triple_Spanish(triple, tripleIndex));
 
 			}
 
 		}
 		
-		Iterator<Triple> itr = tripleStack.iterator();
+		Iterator<Triple_Spanish> itr = tripleStack.iterator();
 
 		// hasNext() returns true if the stack has more elements
 		while (itr.hasNext()){
@@ -68,5 +70,10 @@ public class NumberTranslator {
 		return finalResult.replaceAll("\\s+", " ");
 		
 	}
-
+	
+	public static void main(String[] args) {
+		
+		System.out.println(NumberTranslator.getInstance().translate(46778998l));
+		
+	}
 }

@@ -2,7 +2,7 @@ package org.krauss.obj;
 
 import java.util.HashMap;
 
-public class Triple {
+public class Triple_English {
 
 	private static final HashMap<Integer, String> unit = new HashMap<Integer, String>();
 	{
@@ -57,7 +57,7 @@ public class Triple {
 	private char[] triple;
 	private int tripleIndex;
 
-	public Triple(char[] t, int tIndex) {
+	public Triple_English(char[] t, int tIndex) {
 		this.triple = t;
 		this.tripleIndex = tIndex;
 	}
