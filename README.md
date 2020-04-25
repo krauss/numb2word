@@ -1,8 +1,8 @@
-## NuToWor 1.0.0  :one::two::three: :arrow_right: :bust_in_silhouette::speech_balloon:
+## NuToWor 1.0.0 :1234: :arrow_right: :bust_in_silhouette::speech_balloon:
 
 #### What is it?
 
-A simple JAVA library to translate whole numbers to their written form. Check out the table below to see what languages are available.
+A simple JAVA library to translate whole numbers to their written form. Check out the [table](#available-languages) below to see what languages are available.
 
 #### How to use 
 
@@ -32,6 +32,6 @@ The method `translate()` receives a `long` argument and an `enum ELanguage`, the
 | -------- | -----| --------- |
 | :gb: English | `ELanguage.ENGLISH` | :heavy_check_mark: | 
 | :es: Spanish | `ELanguage.SPANISH` | :heavy_check_mark: |
-| :br: Portuguese | `ELanguage.PORTUGUESE` | :heavy_check_mark: |
+| :interrobang: Portuguese | `ELanguage.PORTUGUESE` | :heavy_check_mark: |
 | :it: Italian | `ELanguage.ITALIAN` | :x: |
 | :fr: French | `ELanguage.FRENCH` | :x: |
