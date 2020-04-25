@@ -2,7 +2,9 @@ package org.krauss.obj;
 
 import java.util.HashMap;
 
-public class Triple_Portuguese {
+import org.krauss.def.Triple;
+
+public class Triple_Portuguese extends Triple{
 
 	private static final HashMap<Integer, String> unidade = new HashMap<Integer, String>();
 	{
@@ -68,12 +70,9 @@ public class Triple_Portuguese {
 		milhar.put(11, "decilhão");
 	}
 
-	private char[] triple;
-	private int tripleIndex;
-
 	public Triple_Portuguese(char[] t, int tIndex) {
-		this.triple = t;
-		this.tripleIndex = tIndex;
+		triple = t;
+		tripleIndex = tIndex;
 	}
 
 	public String translateTriple() {
@@ -86,6 +85,10 @@ public class Triple_Portuguese {
 			if (triple[0] == '1' && !isTwoZero()) {
 				
 				translatedTriple += "cento e ";
+				
+			} else if (triple[0] != '1' && !isTwoZero()) {
+				
+				translatedTriple += centena.get(Integer.parseInt(triple[0] + "")) + " e ";
 				
 			} else {
 				
@@ -120,10 +123,17 @@ public class Triple_Portuguese {
 				return translatedTriple;
 
 			} else {
+				
+				if (triple[triple.length - 2] != '0' && (triple[triple.length - 1] != '0')) {
+					
+					translatedTriple += dezena.get(Integer.parseInt(triple[triple.length - 2] + "")) + " e ";
+					
+				} else {
+					
+					translatedTriple += dezena.get(Integer.parseInt(triple[triple.length - 2] + "")) + " ";
 
-				translatedTriple += triple[triple.length - 2] == '0' ? ""
-						: dezena.get(Integer.parseInt(triple[triple.length - 2] + "")) + " ";
-
+				}
+			
 			}
 
 		}
@@ -153,11 +163,6 @@ public class Triple_Portuguese {
 		}
 
 		return translatedTriple;
-	}
-
-	// True if all the digits within the Triple are ZERO
-	private boolean isAllZero() {
-		return triple[0] == '0' & triple[1] == '0' & triple[2] == '0';
 	}
 	
 	//This method is only used for hundred, because '100' is translated to 'cem' while '101' is tranlated to 'cento e um'

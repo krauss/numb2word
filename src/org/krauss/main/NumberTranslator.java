@@ -2,16 +2,19 @@ package org.krauss.main;
 
 import java.util.Iterator;
 import java.util.Stack;
+
+import org.krauss.def.ELanguage;
+import org.krauss.def.Triple;
 import org.krauss.obj.Triple_English;
 import org.krauss.obj.Triple_Portuguese;
 import org.krauss.obj.Triple_Spanish;
 
 public class NumberTranslator {
-
-	private String number;
-	private Stack<Triple_Spanish> tripleStack = new Stack<>();
-	private int tripleIndex = 0;
 	
+	//Triple objects
+	private String number;
+	private Stack<Triple> tripleStack = new Stack<>();
+	private int tripleIndex = 0;
 	
 	//Singleton pattern
 	private static NumberTranslator instance = null;
@@ -21,8 +24,10 @@ public class NumberTranslator {
 	public static NumberTranslator getInstance() {
 		return instance == null ? new NumberTranslator() : instance;
 	}
+	
+	
+	public String translate(Long n, ELanguage lang) {
 
-	public String translate(Long n) {
 		this.number = String.valueOf(n);
 
 		String finalResult = "";
@@ -31,7 +36,7 @@ public class NumberTranslator {
 		char digitArray[] = number.toCharArray();
 
 		// Each triple that will be pushed into the stack
-		char triple[] = new char[]{'0','0','0'};
+		char triple[] = new char[] { '0', '0', '0' };
 
 		// Index to control the triple array position
 		int index = 2;
@@ -45,35 +50,56 @@ public class NumberTranslator {
 
 			if (index < 0) {
 
-				tripleStack.push(new Triple_Spanish(triple, tripleIndex));
-				triple = new char[]{'0','0','0'};
+				tripleStack.push(createTriple(triple, tripleIndex, lang));
+				triple = new char[] { '0', '0', '0' };
 				index = 2;
 				tripleIndex++;
 
 			} else if (i == 0) {
 
-				tripleStack.push(new Triple_Spanish(triple, tripleIndex));
+				tripleStack.push(createTriple(triple, tripleIndex, lang));
 
 			}
 
 		}
-		
-		Iterator<Triple_Spanish> itr = tripleStack.iterator();
+
+		Iterator<Triple> itr = tripleStack.iterator();
 
 		// hasNext() returns true if the stack has more elements
-		while (itr.hasNext()){
-			
+		while (itr.hasNext()) {
+
 			finalResult += tripleStack.pop().translateTriple() + " ";
-			
+
 		}
 
 		return finalResult.replaceAll("\\s+", " ");
-		
+
 	}
 	
+	
+	private Triple createTriple(char[] triple, int index, ELanguage lang) {
+		Triple t = null;
+		
+		switch (lang) {
+		
+		case SPANISH:
+			t = new Triple_Spanish(triple, index);
+			break;
+		case PORTUGUESE:
+			t = new Triple_Portuguese(triple, index);
+			break;
+		default:
+			t = new Triple_English(triple, index);
+			break;
+		}
+		
+		return t;
+	}
+
+
 	public static void main(String[] args) {
 		
-		System.out.println(NumberTranslator.getInstance().translate(46778998l));
+		System.out.println(NumberTranslator.getInstance().translate(6252l, ELanguage.ENGLISH));
 		
 	}
 }

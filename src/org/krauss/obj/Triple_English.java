@@ -2,7 +2,9 @@ package org.krauss.obj;
 
 import java.util.HashMap;
 
-public class Triple_English {
+import org.krauss.def.Triple;
+
+public class Triple_English extends Triple{
 
 	private static final HashMap<Integer, String> unit = new HashMap<Integer, String>();
 	{
@@ -54,12 +56,9 @@ public class Triple_English {
 		size.put(11, "decillion");
 	}
 
-	private char[] triple;
-	private int tripleIndex;
-
 	public Triple_English(char[] t, int tIndex) {
-		this.triple = t;
-		this.tripleIndex = tIndex;
+		triple = t;
+		tripleIndex = tIndex;
 	}
 
 	public String translateTriple() {
@@ -113,9 +112,5 @@ public class Triple_English {
 		return translatedTriple;
 	}
 
-	// True if all the digits within the Triple are ZERO
-	private boolean isAllZero() {
-		return triple[0] == '0' & triple[1] == '0' & triple[2] == '0';
-	}
 
 }

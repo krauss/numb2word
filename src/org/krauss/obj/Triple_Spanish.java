@@ -2,7 +2,9 @@ package org.krauss.obj;
 
 import java.util.HashMap;
 
-public class Triple_Spanish {
+import org.krauss.def.Triple;
+
+public class Triple_Spanish extends Triple{
 
 	private static final HashMap<Integer, String> unidad = new HashMap<Integer, String>();
 	{
@@ -68,12 +70,9 @@ public class Triple_Spanish {
 		milhar.put (11, "decillón");
 	}
 
-	private char[] triple;
-	private int tripleIndex;
-
 	public Triple_Spanish(char[] t, int tIndex) {
-		this.triple = t;
-		this.tripleIndex = tIndex;
+		triple = t;
+		tripleIndex = tIndex;
 	}
 
 	public String translateTriple() {
@@ -86,6 +85,10 @@ public class Triple_Spanish {
 			if (triple[0] == '1' && !isTwoZero()) {
 				
 				translatedTriple += "ciento y ";
+				
+			} else if (triple[0] != '1' && !isTwoZero()) {
+				
+				translatedTriple += cien.get(Integer.parseInt(triple[0] + "")) + " y ";
 				
 			} else {
 				
@@ -111,7 +114,7 @@ public class Triple_Spanish {
 						
 					} else {
 						
-						translatedTriple += (milhar.get(tripleIndex)).replaceAll("ón", "iones");
+						translatedTriple += (milhar.get(tripleIndex)).replaceAll("ón", "ones");
 						
 					}
 
@@ -120,10 +123,17 @@ public class Triple_Spanish {
 				return translatedTriple;
 
 			} else {
+				
+				if (triple[triple.length - 2] != '0' && (triple[triple.length - 1] != '0')) {
+					
+					translatedTriple += diez.get(Integer.parseInt(triple[triple.length - 2] + "")) + " y ";
+					
+				} else {
+					
+					translatedTriple += diez.get(Integer.parseInt(triple[triple.length - 2] + "")) + " ";
 
-				translatedTriple += triple[triple.length - 2] == '0' ? ""
-						: diez.get(Integer.parseInt(triple[triple.length - 2] + "")) + " ";
-
+				}
+			
 			}
 
 		}
@@ -144,7 +154,7 @@ public class Triple_Spanish {
 				
 			} else {
 				
-				translatedTriple += (milhar.get(tripleIndex)).replaceAll("ón", "iones");
+				translatedTriple += (milhar.get(tripleIndex)).replaceAll("ón", "ones");
 				
 			}
 			
@@ -153,11 +163,6 @@ public class Triple_Spanish {
 		}
 
 		return translatedTriple;
-	}
-
-	// True if all the digits within the Triple are ZERO
-	private boolean isAllZero() {
-		return triple[0] == '0' & triple[1] == '0' & triple[2] == '0';
 	}
 	
 	//This method is only used for hundred, because '100' is translated to 'cem' while '101' is tranlated to 'cento e um'
