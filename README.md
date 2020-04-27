@@ -2,7 +2,7 @@
 
 #### What is it?
 
-A simple JAVA library to translate whole numbers to their written form. The library is capable of translating whole numbers up to 19 digits (more precisely (^):9.21^18^) due to its `Long` type limitations. Check out the [table](#available-languages) below to see what languages are available.
+A simple JAVA library to translate whole numbers to their written form. The library is capable of translating whole numbers up to 19 digits (more precisely `9.21x10^18`) due to its `Long` type limitations. Check out the [table](#available-languages) below to see what languages are available.
 
 #### How to use 
 
