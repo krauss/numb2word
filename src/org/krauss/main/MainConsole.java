@@ -51,7 +51,8 @@ public class MainConsole {
 		
 		System.out.println();
 		System.out.println("3. Result: "+NumberTranslator.getInstance().translate(number, lang));
-
+		System.out.println();
+		in.close();
 	}
 
 }
