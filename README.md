@@ -33,5 +33,24 @@ The method `translate()` receives a `long` argument and an `enum ELanguage`, the
 | :gb: English | `ELanguage.ENGLISH` | :heavy_check_mark: | 
 | :es: Spanish | `ELanguage.SPANISH` | :heavy_check_mark: |
 | :interrobang: Portuguese | `ELanguage.PORTUGUESE` | :heavy_check_mark: |
-| :it: Italian | `ELanguage.ITALIAN` | :x: |
-| :fr: French | `ELanguage.FRENCH` | :x: |
+| :it: Italian | `ELanguage.ITALIAN` | :x: Loading... |
+| :fr: French | `ELanguage.FRENCH` | :x: Loading... |
+
+#### Docker Image
+
+If you just want to see how this library works, download our image available on Docker Hub and follow the instructions below:
+
+##### Download the image:
+
+```shell
+$docker pull jrkrauss/nutowor:latest
+```
+
+##### Create the container and run it:
+
+```shell
+$docker run -it jrkrauss/nutowor:latest
+```
+
+
+
