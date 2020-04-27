@@ -2,7 +2,7 @@
 
 #### What is it?
 
-A simple JAVA library to translate whole numbers to their written form. Check out the [table](#available-languages) below to see what languages are available.
+A simple JAVA library to translate whole numbers to their written form. The library is capable of translating whole numbers up to 19 digits (more precisely (^):9.21^18^) due to its `Long` type limitations. Check out the [table](#available-languages) below to see what languages are available.
 
 #### How to use 
 
@@ -19,7 +19,7 @@ Then using the `NumberTranslator` class static method `getInstance` you can get 
 NumberTranslator translator = NumberTranslator.getInstance();
 translator.translate(32145698l, ELanguage.ENGLISH);
 
-Output:
+//Output:
 
 "thirty two million one hundred forty five thousand six hundred ninety eight" 
 ```
