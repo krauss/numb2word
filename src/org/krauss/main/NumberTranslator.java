@@ -2,7 +2,6 @@ package org.krauss.main;
 
 import java.util.Iterator;
 import java.util.Stack;
-
 import org.krauss.def.ELanguage;
 import org.krauss.def.Triple;
 import org.krauss.obj.Triple_English;
@@ -10,11 +9,6 @@ import org.krauss.obj.Triple_Portuguese;
 import org.krauss.obj.Triple_Spanish;
 
 public class NumberTranslator {
-	
-	//Triple objects
-	private String number;
-	private Stack<Triple> tripleStack = new Stack<>();
-	private int tripleIndex = 0;
 	
 	//Singleton pattern
 	private static NumberTranslator instance = null;
@@ -27,10 +21,12 @@ public class NumberTranslator {
 	
 	
 	public String translate(Long n, ELanguage lang) {
+		//Triple objects
+		String number = String.valueOf(n);
+		Stack<Triple> tripleStack = new Stack<>();
+		int tripleIndex = 0;
 
-		this.number = String.valueOf(n);
-
-		String finalResult = "";
+		String translatedNumber = "";
 
 		// The whole number broken into a big array of chars
 		char digitArray[] = number.toCharArray();
@@ -68,11 +64,11 @@ public class NumberTranslator {
 		// hasNext() returns true if the stack has more elements
 		while (itr.hasNext()) {
 
-			finalResult += tripleStack.pop().translateTriple() + " ";
+			translatedNumber += tripleStack.pop().translateTriple() + " ";
 
 		}
 
-		return finalResult.replaceAll("\\s+", " ");
+		return translatedNumber.replaceAll("\\s+", " ");
 
 	}
 	
@@ -96,10 +92,4 @@ public class NumberTranslator {
 		return t;
 	}
 
-
-	public static void main(String[] args) {
-		
-		System.out.println(NumberTranslator.getInstance().translate(6252l, ELanguage.ENGLISH));
-		
-	}
 }
