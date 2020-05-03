@@ -36,22 +36,22 @@ The method `translate()` receives a `long` argument and an `enum ELanguage`, the
 | :it: Italian | `ELanguage.ITALIAN` | :x: Loading... |
 | :fr: French | `ELanguage.FRENCH` | :x: Loading... |
 
-#### Docker Image
+#### Docker Usage :whale:
 
 If you just want to see how this library works, download our image available on Docker Hub following the instructions below:
 
-##### Download the image:
+##### Download the image :cd:
 
 Once you have [Docker CE](https://docs.docker.com/) installed an running, from your Linux terminal or Windows cmd, type:  
 
 ```shell
-$docker pull jrkrauss/nutowor:latest
+$ docker pull jrkrauss/nutowor:latest
 ```
 
-##### Create the container and run it:
+##### Create the container and run it :ship:
 
 ```shell
-$docker run -it jrkrauss/nutowor:latest
+$ docker run -it jrkrauss/nutowor:latest
 ```
 
 
