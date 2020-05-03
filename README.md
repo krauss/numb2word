@@ -1,10 +1,10 @@
 ## NuToWor 1.0.1 :1234: :arrow_right: :bust_in_silhouette::speech_balloon:
 
-#### What is it?
+#### 1. What is it?
 
 A simple JAVA library to translate whole numbers to their written form. The library is capable of translating whole numbers up to 19 digits (more precisely `9.21x10^18`) due to its `Long` type limitations. Check out the [table](#available-languages) below to see what languages are available.
 
-#### How to use 
+#### 2. How to use? 
 
 Download the [jar file](lib/) into your project's folder and import it into your project's path.
 Once you've done that, that's how you use in your code:
@@ -26,7 +26,7 @@ translator.translate(32145698l, ELanguage.ENGLISH);
 
 The method `translate()` receives a `long` argument and an `enum ELanguage`, then returns a `String` with the number already translated. 
 
-#### Available languages
+##### Available languages
 
 | Language | Enum | Available |
 | -------- | -----| --------- |
@@ -36,7 +36,7 @@ The method `translate()` receives a `long` argument and an `enum ELanguage`, the
 | :it: **Italian** | `ELanguage.ITALIAN` | :x: Loading... |
 | :fr: **French** | `ELanguage.FRENCH` | :x: Loading... |
 
-#### Docker Usage :whale:
+#### 3. Docker Usage :whale:
 
 If you just want to see how this library works, download our image available on Docker Hub following the instructions below:
 
@@ -48,7 +48,7 @@ Once you have [Docker CE](https://docs.docker.com/) installed an running, from y
 $ docker pull jrkrauss/nutowor:latest
 ```
 
-##### Create the container and run it :ship:
+##### Create the container and run/ship it :ship:
 
 ```shell
 $ docker run -it jrkrauss/nutowor:latest
