@@ -30,11 +30,11 @@ The method `translate()` receives a `long` argument and an `enum ELanguage`, the
 
 | Language | Enum | Available |
 | -------- | -----| --------- |
-| :gb: English | `ELanguage.ENGLISH` | :heavy_check_mark: | 
-| :es: Spanish | `ELanguage.SPANISH` | :heavy_check_mark: |
-| :interrobang: Portuguese | `ELanguage.PORTUGUESE` | :heavy_check_mark: |
-| :it: Italian | `ELanguage.ITALIAN` | :x: Loading... |
-| :fr: French | `ELanguage.FRENCH` | :x: Loading... |
+| :gb: **English** | `ELanguage.ENGLISH` | :heavy_check_mark: | 
+| :es: **Spanish** | `ELanguage.SPANISH` | :heavy_check_mark: |
+| :interrobang: **Portuguese** | `ELanguage.PORTUGUESE` | :heavy_check_mark: |
+| :it: **Italian** | `ELanguage.ITALIAN` | :x: Loading... |
+| :fr: **French** | `ELanguage.FRENCH` | :x: Loading... |
 
 #### Docker Usage :whale:
 
