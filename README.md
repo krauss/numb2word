@@ -38,9 +38,11 @@ The method `translate()` receives a `long` argument and an `enum ELanguage`, the
 
 #### Docker Image
 
-If you just want to see how this library works, download our image available on Docker Hub and follow the instructions below:
+If you just want to see how this library works, download our image available on Docker Hub following the instructions below:
 
 ##### Download the image:
+
+Once you have [Docker CE](https://docs.docker.com/) installed an running, from your Linux terminal or Windows cmd, type:  
 
 ```shell
 $docker pull jrkrauss/nutowor:latest
