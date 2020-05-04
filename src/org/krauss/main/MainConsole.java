@@ -10,7 +10,9 @@ public class MainConsole {
 		
 		Scanner in = new Scanner(System.in);
 		String input = "";
+		String number_regex = "^[1-9]\\d+$"; //Make sure the number doesn't start with 0.
 		ELanguage lang = null;
+		Long number = 0l;
 		boolean isLanguagePicked = false;
 		
 		System.out.println("+------------------------------+");
@@ -45,9 +47,15 @@ public class MainConsole {
 		} while (isLanguagePicked == false);
 			
 		System.out.println();
-		System.out.print("2. Type a whole number (Up to 18 digits): ");
-		input = in.nextLine();
-		Long number = Long.parseLong(input);
+		System.out.println();
+		do {
+			
+			System.out.print("2. Type a whole number (Up to 18 digits): ");
+			input = in.nextLine();
+			number = Long.parseLong(input);
+			
+		} while (!input.matches(number_regex));
+		
 		
 		System.out.println();
 		System.out.println("3. Result: "+NumberTranslator.getInstance().translate(number, lang));
