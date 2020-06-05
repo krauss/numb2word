@@ -59,8 +59,8 @@ public class Triple_Spanish extends Triple{
 	{
 		milhar.put (1, "mil");
 		milhar.put (2, "millón");
-		milhar.put (3, "trillón");
-		milhar.put (4, "billón");
+		milhar.put (3, "billón");
+		milhar.put (4, "trillón");
 		milhar.put (5, "cuatrillón");
 		milhar.put (6, "quintillón");
 		milhar.put (7, "sextillón");
