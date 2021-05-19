@@ -1,4 +1,4 @@
-## NuToWor 1.0.1 :1234: :arrow_right: :bust_in_silhouette::speech_balloon:
+## numb2word 1.0.1 :1234: :arrow_right: :bust_in_silhouette::speech_balloon:
 
 #### 1. What is it?
 
