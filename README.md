@@ -45,13 +45,13 @@ If you just want to see how this library works, download our image available on 
 Once you have [Docker CE](https://docs.docker.com/) installed an running, from your Linux terminal or Windows cmd, type:  
 
 ```shell
-$ docker pull jrkrauss/nutowor:latest
+$ docker pull jrkrauss/numb2word:latest
 ```
 
 ##### Create the container and run/ship it :ship:
 
 ```shell
-$ docker run -it jrkrauss/nutowor:latest
+$ docker run -it jrkrauss/numb2word:latest
 ```
 
 
